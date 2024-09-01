@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notons' Inc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="text.css">
+    <style>
+        header, footer {
+            background-: rgba(64, 0, 64, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        .tiktok-icon, .r6-icon {
+            width: 40px;
+            height: 40px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .tiktok-icon:hover, .r6-icon:hover {
+            transform: scale(1.1);
+        }
+        .tiktok-icon {
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 10px #8a2be2);
+        }
+        .r6-icon {
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 0 10px #8a2be2);
+        }
+        .tiktok-icon:hover, .r6-icon:hover {
+            animation: none;
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px #9932cc);
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        .hero-content {
+            padding-left: 250px; /* Increased padding to accommodate larger circle */
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-tagline {
+            font-size: 2em;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .circle {
+            position: absolute;
+            left: 20px; /* Adjusted position */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            border-radius: 50%;
+            border: 2px solid #ffffff; /* White border */
+            background-: transparent; /* No inside  */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White glow */
+            overflow: hidden; /* To ensure the image stays within the circle */
+            animation: pulse 4s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire circle */
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons a:last-child {
+            margin-left: 15px; /* Add some space between the two icons */
+        }
+        .social-icons a {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        /* Smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Smoother transitions for nav buttons */
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        /* Style for the Contact and About sections */
+        #contact, #about {
+            padding: 50px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(64, 0, 102, 0.7), rgba(106, 28, 178, 0.7));
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #contact:hover, #about:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, rgba(64, 0, 102, 0.8), rgba(106, 28, 178, 0.8));
+        }
+        .discord-info, .about-info {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        /* New styles for About and Contact sections */
+        #about h2, #contact h2 {
+            font-size: 2.8em;
+            color: #f0e68c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        .about-info p, .discord-info p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .discord-info strong {
+            color: #b19cd9;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="#home" class="nav-button">Home</a></li>
+                <li><a href="#about" class="nav-button">About</a></li>
+                <li><a href="#contact" class="nav-button">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="circle">
+                <img src="Notions.jpeg" alt="Notions' Profile Picture">
+            </div>
+            <div class="hero-content">
+                <h1>Hi, I'm Notions</h1>
+                <p class="hero-tagline">I like minors no diddy</p>
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@notionsfr" target="_blank" rel="noopener noreferrer">
+                        <img src="download.png" alt="TikTok" class="tiktok-icon">
+                    </a>
+                    <a href="https://r6.tracker.network/r6siege/profile/psn/notions__/overview" target="_blank" rel="noopener noreferrer">
+                        <img src="download (1).png" alt="Rainbow Six Siege" class="r6-icon">
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-info">
+                <p>Currently touching minors. DMs are open if you're under 13.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="discord-info">
+                <p>You can reach me on Discord: <strong>notionsfr</strong></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Notions Website. All rights reserved.</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // Load Script.js
+            const script = document.createElement('script');
+            script.src = 'Script.js';
+            document.body.appendChild(script);
+
+            // Load style.css
+            const styleLink = document.createElement('link');
+            styleLink.rel = 'stylesheet';
+            styleLink.href = 'style.css';
+            document.head.appendChild(styleLink);
+
+            // Load text.css after style.css
+            const textLink = document.createElement('link');
+            textLink.rel = 'stylesheet';
+            textLink.href = 'text.css';
+            document.head.appendChild(textLink);
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

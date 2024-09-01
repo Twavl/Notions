@@ -1,0 +1,173 @@
+/* General text styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #6a1cb2, #9a7cb9); /* Darker purple gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added drop shadow */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 3.5em;
+    background: linear-gradient(45deg, #9a7cb9, #6a1cb2); /* Darker purple gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Enhanced drop shadow for h1 */
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 2.2em;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added drop shadow */
+}
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* List items */
+li {
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added drop shadow */
+}
+
+/* Emphasis */
+em {
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added drop shadow */
+}
+
+strong {
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Added drop shadow */
+}
+
+/* Text selection */
+::selection {
+    background-color: rgba(106, 28, 178, 0.3); /* Darker purple */
+    color: #ffffff;
+}
+
+/* Custom class for special text */
+.highlight-text {
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Added drop shadow */
+}
+
+/* Animation for text hover effect */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(106, 28, 178, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added drop shadow */
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(106, 28, 178, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added drop shadow */
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(106, 28, 178, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added drop shadow */
+    }
+}
+
+.glow-on-hover:hover {
+    animation: textGlow 1.5s infinite;
+}
+
+/* Exception for text under "Hi, I'm Notions" */
+.hero p {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Enhanced drop shadow */
+}
+
+/* Make tab text more visible and less blurry */
+.nav-button {
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Reduced drop shadow */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #9a7cb9; /* Darker purple */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Slightly enhanced drop shadow on hover */
+}
+
+/* Enhanced background and text for About and Contact sections */
+#about, #contact {
+    background: linear-gradient(135deg, rgba(106, 28, 178, 0.8), rgba(154, 124, 185, 0.8));
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#about:hover, #contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(106, 28, 178, 0.9), rgba(154, 124, 185, 0.9));
+}
+
+#about h2, #contact h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+#about p, #contact p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#about .about-info, #contact .discord-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#about .about-info p, #contact .discord-info p {
+    margin-bottom: 0;
+}
+
+#contact strong {
+    color: #f0e68c; /* Light golden color for emphasis */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
